@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Multiplication Table and Sum of Numbers
+        </title>
+        <script>
+            function generateTable(){
+                var number = parseInt(document.getElementById("num").value);
+                var mul = "Multiplication Table for " + number + ":<br>";
+                for (var i = 1; i <= 10; i++) {
+                    mul += number + " x " + i + " = " + (number * i) + "<br>";
+                }
+                document.getElementById("table").innerHTML = mul;
+                
+            }
+            
+            function askInput(){
+                var n = parseInt(document.getElementById("num1").value);
+                var sum = 0;
+                for (var i = 1; i <= n; i++) {
+                    var num = parseInt(prompt("Enter number " + i + ":"));
+                    sum += num;
+                }
+                var c = "The total sum is: " + sum;
+                document.getElementById("sum").innerText = c;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Multiplication Table</h1><br>
+        <input type="text" id="num">
+        <button onclick="generateTable()">Generate Table</button>
+        <p id="table"></p>
+        <h1>Sum of Numbers</h1><br>
+        <input type="text" id="num1">
+        <button onclick="askInput()">Calculate Sum</button>
+        <p id="sum"></p>
+    </body>
+</html>
